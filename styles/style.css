@@ -13,4 +13,240 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--weight-font-main);
+  background-image: 
+    var(--gradient-liner-horizontal), 
+    var(--gradient-liner-vertical), 
+    var(--gradient-blackout);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 100px auto;
+  max-width: 700px; 
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+  padding-block: 128px;
+  background-color: #fff;
+  border: 2px solid #000;
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title-second {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.cards__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  gap: 52px;
+  min-inline-size: min-content;
+}
+
+.cards__list-item {
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card__title {
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--weight-font-title);
+  padding-inline: 10px;
+  padding-block: 3px;
+  border-bottom: 2px solid #000;
+}
+
+.card__image {
+  position: relative;
+}
+
+.image {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__content_text {
+  font-size: 18px;  
+  line-height: 21px;
+}
+
+.filter-opacity {
+  filter: opacity(60%);
+}
+
+.filter-grayscale {
+  filter: grayscale(90%);
+}
+
+.filter-combo {
+  filter: blur(2px) hue-rotate(290deg);
+}
+
+.filter-soft-invert {
+  filter: invert(100%) saturate(70%);
+}
+
+.card__image-label:has( + .filter-soft-invert) {
+  mix-blend-mode: difference;
+}
+
+.filter-contrast {
+  filter: contrast(200%);
+}
+
+.filter-sepia {
+  filter: sepia(80%);
+}
+
+.filter-hue {
+  filter: hue-rotate(45deg)
+}
+
+.card__button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 25px 25px 0;
+}
+
+.button__text {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  color: #fff;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  border: 2px #000 solid;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  padding-block:12.5px;
+  padding-inline: 37px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible:not(.card__icon-button) {
+  box-shadow: 2px 2px 0px 0px #000;
+  outline: none;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px transparent solid;
+  block-size: 38px;
+  transition: border-color 0.3s ease;
+}
+
+
+.button__save {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-block: 50px 100px;
+  margin-inline: auto;
+  min-width: 335px;
+  min-height: 55px;
+}
+
+.floppy {
+  inline-size: 21px;
+  block-size: 21px;
+  flex-shrink: 0;
+}
+
+.button__text-save {
+  padding-left: 8px;
+}
+
+.dialog[open] {
+  display: grid;
+  gap: 30px;
+  padding: 30px;
+  max-inline-size: 353px;
+  position: fixed;
+}
+
+.dialog[open] .floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog__title {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  block-size: 38px;
+}
+
+.button__text-disc {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+
