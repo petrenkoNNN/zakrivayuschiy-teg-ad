@@ -118,7 +118,7 @@
   filter: invert(100%) saturate(70%);
 }
 
-.card__image-label:has( + .filter-soft-invert) {
+.label:has( + .filter-soft-invert) {
   mix-blend-mode: difference;
 }
 
@@ -212,6 +212,7 @@
   inline-size: 21px;
   block-size: 21px;
   flex-shrink: 0;
+  mix-blend-mode: difference;
 }
 
 .button__text-save {
@@ -229,6 +230,7 @@
 .dialog[open] .floppy {
   inline-size: 39px;
   block-size: 39px;
+  mix-blend-mode: difference;
 }
 
 .dialog__title {
